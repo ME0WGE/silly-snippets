@@ -11,18 +11,50 @@ A Visual Studio Code extension that provides a collection of _somewhat_ useful c
 
 ## Supported Languages
 
-- JavaScript - JSX
-- TypeScript - TSX
+- `JavaScript - JSX`
+- `TypeScript - TSX`
 
 ## Requirements
 
-- Dark Themed text editor
+- 5+ years of coding experience
 
 ## Extension Settings
 
 This extension contributes the following settings:
 
 - `sillySnippets.enable`: Enable/disable silly snippets functionality
+
+## Usage
+
+Type the prefix and hit Tab/Enter to expand:
+
+Data Types:
+
+- `cst`: const variable declaration
+- `lt`: let variable declaration
+- `vr`: var variable declaration
+- `arr`: array declaration
+- `obj`: object declaration
+
+Functions:
+
+- `ef`: export default function declaration
+- `efx`: export default function JSX declaration
+- `f`: function declaration
+- `fx`: function declaration JSX
+
+Redux:
+
+- `store`: Redux store configuration
+- `storet`: TSX Redux store configuration
+- `slice`: Redux slice template
+- `slicet`: TSX Redux slice template
+- `dis`: dispatch declaration
+- `sel`: selector declaration
+
+Utilities:
+
+- `cl`: `console.log()`
 
 ## Known Issues
 
