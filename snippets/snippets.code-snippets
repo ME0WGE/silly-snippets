@@ -1,1 +1,223 @@
-{}
+/* 
+/-- Prefix list --\
+Data Types:
+- cst: const variable declaration
+- lt: let variable declaration  
+- vr: var variable declaration
+- arr: array declaration
+- obj: object declaration
+
+Functions:
+- ef: export default function declaration
+- efx: export default function JSX declaration
+- f: function declaration
+- fx: function declaration JSX
+
+Redux:
+- store: Redux store configuration
+- storet: TSX Redux store configuration
+- slice: Redux slice template
+- slicet: TSX Redux slice template
+- dis: dispatch declaration
+- sel: selector declaration
+
+Utilities:
+- cl: console log
+*/
+
+{
+  // ========================================
+  // DATA TYPES & VARIABLES
+  // ========================================
+  "const variable declaration": {
+    "prefix": "cst",
+    "body": ["const ${1:name} = ${2:value};"],
+    "description": "Create a const variable declaration"
+  },
+  "let variable declaration": {
+    "prefix": "lt",
+    "body": ["let ${1:name} = ${2:value};"],
+    "description": "Create a let variable declaration"
+  },
+  "var variable declaration": {
+    "prefix": "vr",
+    "body": ["var ${1:name} = ${2:value};"],
+    "description": "Create a var variable declaration"
+  },
+  "array declaration": {
+    "prefix": "arr",
+    "body": ["const ${1:name} = [${2:value}];"],
+    "description": "Create an array declaration"
+  },
+  "object declaration": {
+    "prefix": "obj",
+    "body": ["const ${1:name} = {${2:value} : ${3:val}};"],
+    "description": "Create an object declaration"
+  },
+
+  // ========================================
+  // FUNCTIONS
+  // ========================================
+  "export default function declaration": {
+    "prefix": "ef",
+    "body": [
+      "export default function ${1:name}(${2:params}) {",
+      "\t${3:// function body}",
+      "\treturn ${4:value};",
+      "}"
+    ],
+    "description": "Create an export default function declaration"
+  },
+  "export default function declaration JSX": {
+    "prefix": "efx",
+    "body": [
+      "export default function ${1:name}(${2:params}) {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t<></>",
+      "\t\t</>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create an export default function declaration in JSX"
+  },
+  "function declaration": {
+    "prefix": "f",
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\t${3:// function body}",
+      "\treturn ${4:value};",
+      "}"
+    ],
+    "description": "Create a function declaration"
+  },
+  "function declaration JSX": {
+    "prefix": "fx",
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t\t<></>",
+      "\t\t</>",
+      "\t);",
+      "}"
+    ],
+    "description": "Create a function declaration in JSX"
+  },
+
+  // ========================================
+  // REDUX - STORE CONFIGURATION
+  // ========================================
+  "Redux store configuration TS": {
+    "prefix": "storet",
+    "body": [
+      "import { configureStore } from '@reduxjs/toolkit';",
+      "import ${1:sliceName}Reducer from './${1:sliceName}Slice';",
+      "",
+      "export const store = configureStore({",
+      "\treducer: {",
+      "\t\t${1:sliceName}: ${1:sliceName}Reducer,",
+      "\t},",
+      "});",
+      "",
+      "export type RootState = ReturnType<typeof store.getState>;",
+      "export type AppDispatch = typeof store.dispatch;"
+    ],
+    "description": "Create a Redux store configuration in TypeScript"
+  },
+  "Redux store configuration": {
+    "prefix": "store",
+    "body": [
+      "import { configureStore } from '@reduxjs/toolkit';",
+      "import ${1:sliceName}Reducer from './${1:sliceName}Slice';",
+      "",
+      "export const store = configureStore({",
+      "\treducer: {",
+      "\t\t${1:sliceName}: ${1:sliceName}Reducer,",
+      "\t},",
+      "});"
+    ],
+    "description": "Create a Redux store configuration"
+  },
+
+  // ========================================
+  // REDUX - SLICES
+  // ========================================
+  "Redux slice template TS": {
+    "prefix": "slicet",
+    "body": [
+      "import { createSlice, PayloadAction } from '@reduxjs/toolkit';",
+      "",
+      "interface ${1:StateName}State {",
+      "\t${2:property}: ${3:string};",
+      "}",
+      "",
+      "const initialState: ${1:StateName}State = {",
+      "\t${2:property}: ${4:''},",
+      "};",
+      "",
+      "const ${1:stateName}Slice = createSlice({",
+      "\tname: '${1:stateName}',",
+      "\tinitialState,",
+      "\treducers: {",
+      "\t\tset${5:Property}: (state, action: PayloadAction<${3:string}>) => {",
+      "\t\t\tstate.${2:property} = action.payload;",
+      "\t\t},",
+      "\t},",
+      "});",
+      "",
+      "export const { set${5:Property} } = ${1:stateName}Slice.actions;",
+      "export default ${1:stateName}Reducer = ${1:stateName}Slice.reducer;"
+    ],
+    "description": "Create a Redux slice template in TypeScript"
+  },
+  "Redux slice template": {
+    "prefix": "slice",
+    "body": [
+      "import { createSlice, PayloadAction } from '@reduxjs/toolkit';",
+      "",
+      "const initialState = {",
+      "\t${2:property}: ${4:value},",
+      "};",
+      "",
+      "const ${1:stateName}Slice = createSlice({",
+      "\tname: '${1:stateName}',",
+      "\tinitialState,",
+      "\treducers: {",
+      "\t\tset${5:Property}: (state, action) => {",
+      "\t\t\tstate.${2:property} = action.payload;",
+      "\t\t},",
+      "\t},",
+      "});",
+      "",
+      "export const { set${5:Property} } = ${1:stateName}Slice.actions;",
+      "export default ${1:stateName}Reducer = ${1:stateName}Slice.reducer;"
+    ],
+    "description": "Create a Redux slice template"
+  },
+
+  // ========================================
+  // REDUX - HOOKS & UTILITIES
+  // ========================================
+  "dispatch declaration": {
+    "prefix": "dis",
+    "body": ["const dispatch = useDispatch();"],
+    "description": "Create a dispatch declaration"
+  },
+  "selector declaration": {
+    "prefix": "sel",
+    "body": [
+      "const ${1:name} = useSelector((state: RootState) => state.${2:name});"
+    ],
+    "description": "Create a selector declaration"
+  },
+
+  // ========================================
+  // UTILITIES & DEBUGGING
+  // ========================================
+  "console log": {
+    "prefix": "cl",
+    "body": ["console.log(${1:value});"],
+    "description": "Create a console log statement"
+  }
+}
