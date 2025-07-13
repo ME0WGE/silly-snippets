@@ -206,10 +206,15 @@ Utilities:
   },
   "selector declaration": {
     "prefix": "sel",
+    "body": ["const ${1:name} = useSelector((state) => state.${2:name});"],
+    "description": "Create a selector declaration"
+  },
+  "selector declaration TS": {
+    "prefix": "selt",
     "body": [
       "const ${1:name} = useSelector((state: RootState) => state.${2:name});"
     ],
-    "description": "Create a selector declaration"
+    "description": "Create a selector declaration in TypeScript"
   },
 
   // ========================================
