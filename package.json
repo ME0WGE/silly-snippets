@@ -1,6 +1,7 @@
 {
   "name": "silly-snippets",
-  "displayName": "silly-snippets",
+  "publisher": "purrcode",
+  "displayName": "Silly Snippets",
   "description": "Slightly useful collection of code snippets for the proudly lazy. WARNING: Won't work on light themed VSCode.(Just kidding. Or am I?)",
   "version": "1.0.0",
   "engines": {
