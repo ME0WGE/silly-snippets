@@ -21,6 +21,12 @@ A Visual Studio Code extension that provides a collection of **_somewhat_** usef
 - 5+ years of coding experience
 - Visual Studio Code version `^1.102.0`
 
+## Extension Settings
+
+This extension contributes the following settings:
+
+- `sillySnippets.enable`: Enable/disable silly snippets functionality
+
 ## Usage
 
 Type the prefix and hit `Tab`/`Enter` to expand:

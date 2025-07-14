@@ -1,6 +1,5 @@
 {
   "name": "silly-snippets",
-  "publisher": "purrcode",
   "displayName": "silly-snippets",
   "description": "Slightly useful collection of code snippets for the proudly lazy. WARNING: Won't work on light themed VSCode.(Just kidding. Or am I?)",
   "version": "1.0.0",
@@ -10,12 +9,61 @@
   "categories": [
     "Snippets"
   ],
+  "keywords": [
+    "snippets",
+    "javascript",
+    "typescript",
+    "jsx",
+    "tsx",
+    "productivity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ME0WGE/silly-snippets.git"
+  },
+  "homepage": "https://github.com/ME0WGE/silly-snippets#readme",
+  "bugs": {
+    "url": "https://github.com/ME0WGE/silly-snippets/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "contributes": {
     "snippets": [
       {
-        "language": "javascript javascriptreact typescript typescriptreact",
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
         "path": "./snippets/snippets.code-snippets"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Silly Snippets",
+      "properties": {
+        "sillySnippets.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable silly snippets functionality"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.102.0"
   }
 }
