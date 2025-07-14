@@ -26,13 +26,6 @@
     "url": "https://github.com/ME0WGE/silly-snippets/issues"
   },
   "license": "MIT",
-  "icon": "icon.png",
-  "activationEvents": [],
-  "main": "./out/extension.js",
-  "galleryBanner": {
-    "color": "#1e1e1e",
-    "theme": "dark"
-  },
   "contributes": {
     "snippets": [
       {
