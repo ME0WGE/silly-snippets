@@ -3,7 +3,7 @@
   "publisher": "purrcode",
   "displayName": "silly-snippets",
   "description": "Slightly useful collection of code snippets for the proudly lazy. WARNING: Won't work on light themed VSCode.(Just kidding. Or am I?)",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.102.0"
   },
